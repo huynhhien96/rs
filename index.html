@@ -3,31 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Tailwind Blog</title>
+    <title>My Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 text-gray-800">
-    <header class="bg-teal-500 text-white py-6">
-        <div class="container mx-auto text-center">
-            <h1 class="text-4xl font-bold">Welcome to My Blog</h1>
-            <nav class="mt-4">
-                <a href="#" class="text-white px-4 hover:underline">Home</a>
-                <a href="#" class="text-white px-4 hover:underline">About</a>
-                <a href="#" class="text-white px-4 hover:underline">Contact</a>
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- Header -->
+    <header class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <h1 class="text-2xl font-bold">My Portfolio</h1>
+            <nav>
+                <a href="#" class="px-4 hover:underline">About Me</a>
+                <a href="#" class="px-4 hover:underline">Contact</a>
             </nav>
         </div>
     </header>
 
-    <main class="container mx-auto mt-8 px-4">
-        <article class="bg-white p-6 rounded-lg shadow-md">
-            <h2 class="text-2xl font-bold mb-4">My First Blog Post</h2>
-            <p class="mb-4">Hello world! Welcome to my first blog post. I am excited to share my thoughts and stories here. Stay tuned for more updates!</p>
-            <p>Blogging is a fun way to express yourself and connect with others. I hope you enjoy reading!</p>
-        </article>
-    </main>
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="bg-gray-800 text-white w-64 p-6">
+            <nav class="space-y-4">
+                <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Overall</a>
+                <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">My Experience</a>
+                <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Beside Me</a>
+            </nav>
+        </aside>
 
-    <footer class="bg-teal-500 text-white mt-12 py-4 text-center">
-        <p>&copy; 2024 My Tailwind Blog. All rights reserved.</p>
-    </footer>
+        <!-- Main Content -->
+        <main class="flex-1 p-8">
+            <h2 class="text-3xl font-semibold mb-4">Welcome to My Portfolio</h2>
+            <p class="text-lg mb-6">
+                Hello! I'm excited to showcase my work and experiences. Use the sidebar to navigate through different sections.
+            </p>
+
+            <!-- Sample Content Section -->
+            <section>
+                <h3 class="text-2xl font-bold mb-2">Latest Projects</h3>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Project 1: A web-based dashboard</li>
+                    <li>Project 2: Mobile application for task management</li>
+                    <li>Project 3: Open-source library contribution</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
 </body>
 </html>
