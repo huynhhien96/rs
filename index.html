@@ -12,7 +12,6 @@
     <header class="bg-blue-600 text-white py-4">
         <div class="container mx-auto flex justify-between items-center px-6">
             <div class="flex items-center">
-                <!-- Logo -->
                 <img src="logo.png" alt="Ice Cream Logo" class="h-12 w-12 mr-4">
                 <h1 class="text-2xl font-bold">My Portfolio</h1>
             </div>
@@ -40,17 +39,34 @@
                 Hello! I'm excited to showcase my work and experiences. Use the sidebar to navigate through different sections.
             </p>
 
-            <!-- Sample Content Section -->
-            <section>
-                <h3 class="text-2xl font-bold mb-2">Latest Projects</h3>
-                <ul class="list-disc list-inside space-y-2">
-                    <li>Project 1: A web-based dashboard</li>
-                    <li>Project 2: Mobile application for task management</li>
-                    <li>Project 3: Open-source library contribution</li>
-                </ul>
+            <!-- Anime Quote Generator -->
+            <section class="mt-12">
+                <h3 class="text-2xl font-bold mb-2">Daily Anime Quote</h3>
+                <p id="quote" class="text-lg italic text-gray-700 mb-4">Click the button to generate today's quote.</p>
+                <button onclick="generateQuote()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                    Generate Quote
+                </button>
             </section>
         </main>
     </div>
+
+    <script>
+        // Sample anime quotes
+        const quotes = [
+            "Power comes in response to a need, not a desire. You have to create that need. - Goku, Dragon Ball Z",
+            "A lesson without pain is meaningless. - Edward Elric, Fullmetal Alchemist: Brotherhood",
+            "Whether a fish lives in a clear stream or a water ditch, so long as it continues swimming forward, it will grow up beautifully. - Koro-sensei, Assassination Classroom",
+            "Forgetting is like a wound. The wound may heal, but it has already left a scar. - Monkey D. Luffy, One Piece",
+            "Fear is not evil. It tells you what your weakness is. And once you know your weakness, you can become stronger as well as kinder. - Gildarts Clive, Fairy Tail"
+        ];
+
+        // Function to generate a new quote
+        function generateQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const quote = quotes[randomIndex];
+            document.getElementById('quote').innerText = quote;
+        }
+    </script>
 
 </body>
 </html>
