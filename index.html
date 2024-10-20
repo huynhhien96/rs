@@ -3,60 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Blog</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f3f3f3;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-        main {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <title>My Tailwind Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <header>
-        <h1>Welcome to My Blog</h1>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-        </nav>
+<body class="bg-gray-100 text-gray-800">
+    <header class="bg-teal-500 text-white py-6">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-bold">Welcome to My Blog</h1>
+            <nav class="mt-4">
+                <a href="#" class="text-white px-4 hover:underline">Home</a>
+                <a href="#" class="text-white px-4 hover:underline">About</a>
+                <a href="#" class="text-white px-4 hover:underline">Contact</a>
+            </nav>
+        </div>
     </header>
-    <main>
-        <article>
-            <h2>My First Blog Post</h2>
-            <p>Hello world! This is my first blog post on my new website. Stay tuned for more content!</p>
+
+    <main class="container mx-auto mt-8 px-4">
+        <article class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold mb-4">My First Blog Post</h2>
+            <p class="mb-4">Hello world! Welcome to my first blog post. I am excited to share my thoughts and stories here. Stay tuned for more updates!</p>
+            <p>Blogging is a fun way to express yourself and connect with others. I hope you enjoy reading!</p>
         </article>
     </main>
-    <footer>
-        <p>&copy; 2024 My Blog. All rights reserved.</p>
+
+    <footer class="bg-teal-500 text-white mt-12 py-4 text-center">
+        <p>&copy; 2024 My Tailwind Blog. All rights reserved.</p>
     </footer>
 </body>
 </html>
