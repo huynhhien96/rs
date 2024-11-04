@@ -1,240 +1,170 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./style.css" rel="stylesheet">
   <link href="/custom.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
 </head>
-<body>
-  <!-- BUTTON RESPONSIVE -->
-  <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar"
-    type="button"
-    class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
-    <span class="sr-only">Open sidebar</span>
-    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-      <path clip-rule="evenodd" fill-rule="evenodd"
-        d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z">
-      </path>
-    </svg>
-  </button>
-  <!-- SIDEBAR -->
-  <aside id="default-sidebar"
-    class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
-    aria-label="Sidebar">
-    <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
-      <ul class="space-y-2 font-medium">
-        <!-- NAME MENU -->
-        <li class="place-items-center">
-          <div class="to-indigo-100 object-cover">
-            <img class="profile-image object-cover rounded-lg" src="./Image/PI_3.JPG" alt="">
-          </div>
-          <a href="#"
-            class="text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-            <span class="">Huynh Duc Hien</span>
-          </a>
-        </li>
-        <!-- HOME MENU -->
-        <li>
-          <a href="#"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-            <svg 
-              class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-              aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
-              <path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
-            </svg>            
-            <span class="flex-1 ms-3 whitespace-nowrap">Home</span>
-          </a>
-        </li>
-        <!-- ABOUT ME MENU -->
-        <li>
-          <a href="#"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-            <svg
-              class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-              aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
-              <path
-                d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z" />
-            </svg>
-            <span class="flex-1 ms-3 whitespace-nowrap">About me</span>
-          </a>
-        </li>
-        <!-- EXPERIENCE MENU -->
-        <li>
-          <a href="#"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-            <svg
-              class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-              aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-              <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
-            </svg>
-            <span class="flex-1 ms-3 whitespace-nowrap">Experience</span>
-          </a>
-        </li>
-        <!-- CONTACT MENU -->
-        <li>
-          <a href="#"
-            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-            <svg
-              class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-              aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
-              <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
-            </svg>
-            <span class="flex-1 ms-3 whitespace-nowrap">Contact</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </aside>
-  <!-- MAIN BODY -->
-  <div class="p-4 sm:ml-64">
-    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
-      <div class="grid grid-cols-3 gap-4 mb-4">
-        <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-          <p class="text-2xl text-gray-400 dark:text-gray-500">
-            <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 18 18">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9 1v16M1 9h16" />
-            </svg>
-          </p>
-        </div>
-        <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-          <p class="text-2xl text-gray-400 dark:text-gray-500">
-            <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 18 18">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9 1v16M1 9h16" />
-            </svg>
-          </p>
-        </div>
-        <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-          <p class="text-2xl text-gray-400 dark:text-gray-500">
-            <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 18 18">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9 1v16M1 9h16" />
-            </svg>
-          </p>
-        </div>
+
+<body class="bg-body-blue">
+  <!-- Header -->
+  <div class="section-fp">
+    <header class="container fixed-header flex items-center justify-between mx-auto py-4">
+      <!-- Logo -->
+      <div class="header-name text-2xl font-bold text-blue-900">
+        Huynh Duc Hien
       </div>
-      <div class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
-        <p class="text-2xl text-gray-400 dark:text-gray-500">
-          <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-            viewBox="0 0 18 18">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M9 1v16M1 9h16" />
-          </svg>
-        </p>
+
+      <!-- Navigation Links -->
+      <nav class="header-menu space-x-8 text-blue-900 font-medium">
+        <a href="#" class="text-sm/6 font-semibold">Home</a>
+        <a href="#about-section" class="text-sm/6 font-semibold">About</a>
+        <a href="#" class="text-sm/6 font-semibold">Resume</a>
+      </nav>
+
+      <!-- Social Icons -->
+      <div class="header-social flex space-x-4">
+        <a href="mailto:huynhhien.15596@gmail.com" aria-label="Email">
+          <img src="./Image/icon_gmail.svg" alt="Email Icon" class="w-6 h-6">
+        </a>
+        <a href="https://www.linkedin.com/in/hienhuynh96/" target="_blank" aria-label="LinkedIn">
+          <img src="./Image/icon_linkedin.svg" alt="LinkedIn Icon" class="w-6 h-6">
+        </a>
+        <a href="https://www.skype.com" target="_blank" aria-label="Skype">
+          <img src="./Image/icon_skype.svg" alt="Skype Icon" class="w-6 h-6">
+        </a>
       </div>
-      <div class="grid grid-cols-2 gap-4 mb-4">
-        <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-          <p class="text-2xl text-gray-400 dark:text-gray-500">
-            <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 18 18">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9 1v16M1 9h16" />
-            </svg>
-          </p>
+    </header>
+    <!-- Cover -->
+    <section id="section-1"
+      class="container mx-auto flex flex-col justify-evenly px-8 py-12 md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12">
+      <!-- Text Section -->
+      <div class="text-left">
+        <p class="text-lg font-semibold text-blue-1">Hello, I'm Hien,</p>
+        <div class="w-96 h-60">
+          <span is="type-async" id="type-text" class="text-size-4xl font-bold text-blue-1 typing-async-effect">Business
+            Analyst</span>
+          <span class="blinking-cursor text-4xl font-bold text-blue-1">_</span>
         </div>
-        <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-          <p class="text-2xl text-gray-400 dark:text-gray-500">
-            <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 18 18">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9 1v16M1 9h16" />
-            </svg>
-          </p>
-        </div>
-        <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-          <p class="text-2xl text-gray-400 dark:text-gray-500">
-            <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 18 18">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9 1v16M1 9h16" />
-            </svg>
-          </p>
-        </div>
-        <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-          <p class="text-2xl text-gray-400 dark:text-gray-500">
-            <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 18 18">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9 1v16M1 9h16" />
-            </svg>
-          </p>
-        </div>
+        <p class="text-lg font-semibold text-blue-1">based in Vietnam.</p>
+        <a href="#resume"
+          class="btn-cta flex items-center justify-center mt-6 px-6 py-3 rounded-md transition duration-200">
+          Resume
+        </a>
       </div>
-      <div class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
-        <p class="text-2xl text-gray-400 dark:text-gray-500">
-          <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-            viewBox="0 0 18 18">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M9 1v16M1 9h16" />
-          </svg>
-        </p>
+      <!-- Image Section -->
+      <div class="relative">
+        <!-- Profile Image with Border -->
+        <img src="./Image/Profile_Image.svg" alt="Profile" class="">
       </div>
-      <div class="grid grid-cols-2 gap-4">
-        <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-          <p class="text-2xl text-gray-400 dark:text-gray-500">
-            <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 18 18">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9 1v16M1 9h16" />
-            </svg>
-          </p>
-        </div>
-        <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-          <p class="text-2xl text-gray-400 dark:text-gray-500">
-            <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 18 18">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9 1v16M1 9h16" />
-            </svg>
-          </p>
-        </div>
-        <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-          <p class="text-2xl text-gray-400 dark:text-gray-500">
-            <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 18 18">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9 1v16M1 9h16" />
-            </svg>
-          </p>
-        </div>
-        <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-          <p class="text-2xl text-gray-400 dark:text-gray-500">
-            <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 18 18">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9 1v16M1 9h16" />
-            </svg>
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800">
-      
-      <!-- <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
-        <blockquote>
-          <p class="text-lg font-medium">
-            “Tailwind CSS is the only framework that I've seen scale
-            on large teams. It’s easy to customize, adapts to any design,
-            and the build size is tiny.”
-          </p>
-        </blockquote>
-        <figcaption class="font-medium">
-          <div class="text-sky-500 dark:text-sky-400">
-            Sarah Dayan
-          </div>
-          <div class="text-slate-700 dark:text-slate-500">
-            Staff Engineer, Algolia
-          </div> -->
-        </figcaption>
-      </div>
-    </div>
+    </section>
   </div>
+  <!-- About -->
+  <section id="section-2" class="container mx-auto section-fp px-12">
+    <div class="section-2-title">
+      <h1 class="text-7xl font-bold text-blue-2 pb-6">About</h1>
+      <p class="text-lg text-blue-1 pb-6">I prioritize commitment and assigned work. My hobby is always seeking to learn
+        and conquer challenges.</p>
+    </div>
+    <div class="flex justify-between">
+      <!-- Left Side - Profile Image -->
+      <img src="./Image/Profile_2.svg" alt="Profile" class="">
+      <!-- Right Side - Content -->
+      <div class="ml-10">
+        <div>
+          <h2 class="text-2xl font-semibold text-blue-1">Senior Business Analyst & Product Owner</h2>
+          <p class="text-blue-1 py-5 text-lg">
+            Worked as a Software Engineer for 2 years before becoming a Business Analyst, so I understand development’s
+            technical or coding aspects. </n>
+            Business Analyst and Product Owner with over 6 years in Digital Transformation Technology. Based on observation and working on various projects, not just the roles mentioned above. He can support positions like Quality Assurance or Quality Control.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-8 text-blue-1 text-lg">
+          <div class="flex"><span class="font-semibold w-24">Birthday:</span> <span>15 May 1996</span></div>
+          <div class="flex"><span class="font-semibold w-24">Degree:</span> <span>Bachelor Degree</span></div>
+          <div class="flex"><span class="font-semibold w-24">Phone:</span> <span>+84 704 902 582</span></div>
+          <div class="flex"><span class="font-semibold w-24">Email:</span> <span>huynhhien.15596@gmail.com</span></div>
+          <div class="flex"><span class="font-semibold w-24">City:</span> <span>Ho Chi Minh VN</span></div>
+          <div class="flex"><span class="font-semibold w-24">LinkedIn:</span> <span>live:duchien15596</span></div>
+          <div class="flex"><span class="font-semibold w-24">Website:</span> <span>You’re looking at it</span></div>
+          <div class="flex"><span class="font-semibold w-24">Freelance:</span> <span>Available</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section-3" class="container mx-auto space-y-16 section-fp">
+    <!-- Summary Section -->
+    <div id="resume">
+      <h2 class="text-4xl font-bold text-blue-500 mb-4">Summary</h2>
+      <p class="text-blue-400 text-lg">
+        &#8226; <span class="font-semibold">Huynh Duc Hien</span> <br>
+        Business Analyst and Product Owner with over 6 years in Digital Transformation Technology. Based on observation
+        and working on various projects, not just the roles mentioned above. He can support positions like Quality
+        Assurance or Quality Control.
+      </p>
+    </div>
+
+    <!-- Education Section -->
+    <div id="section-4" class="section-fp">
+      <h2 class="text-4xl font-bold text-blue-500 mb-4">Education</h2>
+      <div class="space-y-6 text-blue-400">
+        <!-- Individual Education Entry -->
+        <div class="flex space-x-4">
+          <span class="text-blue-500">&#8226;</span>
+          <div>
+            <h3 class="text-xl font-semibold text-blue-900">Professional Scrum Product Owner 2</h3>
+            <p class="text-sm font-light">2024 &bull; Scrum.org</p>
+            <p class="text-sm">
+              Learned as a PO and have a strong understanding of the fundamentals of Scrum. Knew how to apply the Scrum
+              Framework and manage products by forecasting and release planning or evolving the Agile organization.
+            </p>
+          </div>
+        </div>
+
+        <!-- Repeat this block for each education entry -->
+        <!-- Add more entries following the same structure above -->
+
+      </div>
+    </div>
+
+    <!-- Professional Experience Section -->
+    <div id="section-5" class="section-fp">
+      <h2 class="text-4xl font-bold text-blue-500 mb-4">Professional Experience</h2>
+      <div class="space-y-8">
+
+        <!-- Individual Experience Entry -->
+        <div class="space-y-2">
+          <div class="flex items-center space-x-4">
+            <span class="text-blue-500">&#8226;</span>
+            <h3 class="text-xl font-semibold text-blue-900">Senior Business Analyst</h3>
+          </div>
+          <div class="flex items-center space-x-4 text-blue-400">
+            <span class="bg-blue-900 text-white px-2 py-1 rounded">01/2020 - 03/2021</span>
+            <span class="bg-blue-900 text-white px-2 py-1 rounded">08/2023 - CURRENT</span>
+            <span>FPT Software</span>
+          </div>
+          <ul class="list-disc list-inside text-blue-400 space-y-1 ml-6">
+            <li>Led 2 Scrum teams (10 members) through the full product life cycle, from requirements to release.</li>
+            <li>Held the position of Product Owner on projects.</li>
+            <li>Estimated user stories and defined features with clients.</li>
+            <li>Monitored production, resolved bugs swiftly, and mitigated risks.</li>
+            <li>Collaborated with teams across Saudi and the U.S. for strategic planning.</li>
+            <li>Provided daily updates to Product and Program Managers.</li>
+          </ul>
+        </div>
+
+        <!-- Repeat this block for each experience entry -->
+        <!-- Add more entries following the same structure above -->
+
+      </div>
+    </div>
+  </section>
 </body>
+<script src="./effect.js"></script>
+
 </html>

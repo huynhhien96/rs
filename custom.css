@@ -1,5 +1,77 @@
+/* Common styles */
+.fixed-header {
+    height: 70px;
+    background-color: #EFF5FD;
+    /* position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1000; */
+}
+
+/* Common colours */
+.text-blue-1 {
+    color: #03045E;
+}
+.text-blue-2 {
+    color: #7BC7FF;
+}
+
+.text-size-4xl {
+    font-size: 100px;
+    line-height: 116px;
+}
+
+.bg-body-blue {
+    background-color: #EFF5FD;
+}
+
+/* Header style */
+.header-name {
+    font-size: 30px;
+}
+
+.header-menu a {
+    font-size: 18px;
+    width: 74px;
+}
+
+.header-menu a:hover {
+    text-decoration: unset;
+    color: #0165DA;
+}
+/* Section Cover */
+.section-fp {
+    height: 100vh;
+}
 .profile-image {
     height: 160px;
     width: auto;
     border-radius: 50%;
 }
+.btn-cta {
+    background-color: #7BC7FF;
+    width: 160px;
+    height: 60px;
+    line-height: unset;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    color: #0A2147;
+}
+.btn-cta:hover {
+    background-color: #BAE7EC;
+}
+
+/* Effect text running */
+.typing-async-effect {
+    animation: cubic-bezier(0.4, 0, 0.2, 1) 1s infinite normal both running typing-async-effect;
+    text-decoration: underline #BAE7EC;
+}
+.blinking-cursor {
+    user-select: none;
+    animation: blink 2s steps(2, start) infinite; }
+  
+  @keyframes blink {
+    to {
+      visibility: hidden; } }
