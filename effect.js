@@ -61,3 +61,12 @@ class TypeAsync extends HTMLSpanElement {
 customElements.define('type-async', TypeAsync, { extends: 'span' })
 
 runTypingEffect()
+
+
+// Pure Counter Effect
+new PureCounter();
+new PureCounter({
+  filesizing: true,
+  selector: ".filesizecount",
+  pulse: 2,
+});
