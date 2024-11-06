@@ -64,6 +64,24 @@
 .bg-blue-6 {
     background-color: #EFF5FD;
 }
+.border-blue-1 {
+    border-color: #03045E;
+}
+.border-blue-2 {
+    border-color: #7BC7FF;
+}
+.border-blue-3 {
+    border-color: #0165DA;
+}
+.border-blue-4 {
+    border-color: #BAE7EC;
+}
+.border-blue-5 {
+    border-color: #CDE7FF;
+}
+.border-blue-6 {
+    border-color: #EFF5FD;
+}
 
 .text-size-4xl {
     font-size: 100px;
