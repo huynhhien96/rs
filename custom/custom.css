@@ -116,32 +116,32 @@
 .nav-hidden {
     display: none;
 }
-.menu-1 {
+.animated-menu-1 {
     animation: slide-in 0.7s cubic-bezier(0.42, 0, 0.58, 1);
 }
-.menu-2 {
+.animated-menu-2 {
     animation: slide-in 0.8s cubic-bezier(0.42, 0, 0.58, 1);
 }
-.menu-3 {
+.animated-menu-3 {
     animation: slide-in 0.9s cubic-bezier(0.42, 0, 0.58, 1);
 }
-.menu-4 {
+.animated-menu-4 {
     animation: slide-in 1s cubic-bezier(0.42, 0, 0.58, 1);
 }
 @media (min-width: 1024px) {
     .nav-hidden {
         display: flex;
     }
-    .menu-1 {
+    .animated-menu-1 {
         animation: none;
     }
-    .menu-2 {
+    .animated-menu-2 {
         animation: none;
     }
-    .menu-3 {
+    .animated-menu-3 {
         animation: none;
     }
-    .menu-4 {
+    .animated-menu-4 {
         animation: none;
     }
 }
@@ -170,9 +170,10 @@
 }
 @media (max-width: 768px) {
     #cover-section {
-        background-image: url("../Image/Mobile-Tablet_PI_40.SVG");
+        background-image: url("../Image/Mobile-Tablet_PI_65.SVG");
         position: relative;
         background-size: cover;
+        background-position: center;
     }
 }
 

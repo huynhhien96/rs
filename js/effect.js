@@ -82,4 +82,19 @@ function toggleMenu(button) {
   elements.forEach(({ id, toggleClass }) => {
     document.getElementById(id).classList.toggle(toggleClass);
   });
+  
+  // Close menu when user click outside
+  document.addEventListener('click', (e) => {
+    if (!button.contains(e.target) && !document.getElementById('menu-1').contains(e.target)) {
+      elements.forEach(({ id, toggleClass }) => {
+        if (id === 'close-menu') {
+          document.getElementById(id).classList.add('hidden');
+        } else if (id === 'open-menu') {
+          document.getElementById(id).classList.remove('hidden');
+        } else {
+          document.getElementById(id).classList.add(toggleClass);
+        }
+      });
+    }
+  });
 }

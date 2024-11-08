@@ -13,7 +13,8 @@
   <header class="sticky top-0 z-50 bg-white w-full container p-1
   lg:static lg:bg-blue-50 lg:px-4 lg:flex lg:items-center lg:mx-auto lg:py-4">
     <!-- Logo -->
-    <div class="flex justify-between text-blue-950 font-bold text-xl px-3 py-4 w-full h-fit lg:block lg:bg-inherit lg:header-name lg:text-2xl">
+    <div
+      class="flex justify-between text-blue-950 font-bold text-xl px-3 py-4 w-full h-fit lg:block lg:bg-inherit lg:header-name lg:text-2xl">
       <p class="lg:hidden">Hien Huynh</p>
       <p class="max-lg:hidden">Huynh Duc Hien</p>
       <button onclick="toggleMenu(this)" type="button" class="btn-menu lg:hidden" aria-expanded="false">
@@ -21,75 +22,77 @@
         <img id="close-menu" class="w-6 hidden" src="../Image/Close Menu.svg" alt="">
       </button>
     </div>
-    <div class="bg-white w-full absolute top-16 left-0 bg:bg-transparent lg:static lg:mt-0 lg:top-0">
-      <!-- Navigation Links -->
-      <nav id="menu-1" class="nav-hidden grid grid-cols-1 font-semibold text-base text-blue-950 w-full
+    <!-- <div class="bg-white w-full absolute top-16 left-0 bg:bg-transparent lg:static lg:flex lg:items-center lg:justify-items-start lg:mt-0 lg:top-0">
+      
+    </div> -->
+    <!-- Navigation Links -->
+    <nav id="menu-1" class="nav-hidden absolute top-70 left-0 grid grid-cols-1 font-semibold text-base text-blue-950 w-full
     lg:items-center lg:justify-center lg:gap-14">
-        <a href="#" class="menu-1 bg-white p-3 border-dashed border-sky-50 border-b-2 flex items-center justify-between hover:bg-teal-50
+      <a href="#" class="animated-menu-1 bg-white p-3 border-dashed border-sky-50 border-b-2 flex items-center justify-between hover:bg-teal-50
       lg:block lg:bg-inherit lg:border-0 lg:hover:bg-transparent lg:hover:text-sky-800">
-          <span>Home</span>
-          <svg class="lg:hidden" width="16" height="17" viewBox="0 0 16 17" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M5.29316 2.90864C4.90228 2.51775 4.90228 1.884 5.29316 1.49312C5.68405 1.10223 6.3178 1.10223 6.70869 1.49312L13.0084 7.79284C13.3989 8.18337 13.3989 8.81653 13.0084 9.20706L6.70869 15.5068C6.3178 15.8977 5.68405 15.8977 5.29316 15.5068C4.90228 15.1159 4.90228 14.4822 5.29316 14.0913L10.8845 8.49995L5.29316 2.90864Z"
-              fill="#3F4B66"></path>
-          </svg>
-        </a>
-        <a href="#" class="menu-2 bg-white p-3 border-dashed border-sky-50 border-b-2 flex items-center justify-between hover:bg-teal-50
+        <span>Home</span>
+        <svg class="lg:hidden" width="16" height="17" viewBox="0 0 16 17" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M5.29316 2.90864C4.90228 2.51775 4.90228 1.884 5.29316 1.49312C5.68405 1.10223 6.3178 1.10223 6.70869 1.49312L13.0084 7.79284C13.3989 8.18337 13.3989 8.81653 13.0084 9.20706L6.70869 15.5068C6.3178 15.8977 5.68405 15.8977 5.29316 15.5068C4.90228 15.1159 4.90228 14.4822 5.29316 14.0913L10.8845 8.49995L5.29316 2.90864Z"
+            fill="#3F4B66"></path>
+        </svg>
+      </a>
+      <a href="#" class="animated-menu-2 bg-white p-3 border-dashed border-sky-50 border-b-2 flex items-center justify-between hover:bg-teal-50
       lg:block lg:bg-inherit lg:border-0 lg:hover:bg-transparent lg:hover:text-sky-800">
-          <span>About</span>
-          <svg class="lg:hidden" width="16" height="17" viewBox="0 0 16 17" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M5.29316 2.90864C4.90228 2.51775 4.90228 1.884 5.29316 1.49312C5.68405 1.10223 6.3178 1.10223 6.70869 1.49312L13.0084 7.79284C13.3989 8.18337 13.3989 8.81653 13.0084 9.20706L6.70869 15.5068C6.3178 15.8977 5.68405 15.8977 5.29316 15.5068C4.90228 15.1159 4.90228 14.4822 5.29316 14.0913L10.8845 8.49995L5.29316 2.90864Z"
-              fill="#3F4B66"></path>
-          </svg>
-        </a>
-        <a href="#" class="menu-3 bg-white p-3 border-dashed border-sky-50 border-b-2 flex items-center justify-between hover:bg-teal-50
+        <span>About</span>
+        <svg class="lg:hidden" width="16" height="17" viewBox="0 0 16 17" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M5.29316 2.90864C4.90228 2.51775 4.90228 1.884 5.29316 1.49312C5.68405 1.10223 6.3178 1.10223 6.70869 1.49312L13.0084 7.79284C13.3989 8.18337 13.3989 8.81653 13.0084 9.20706L6.70869 15.5068C6.3178 15.8977 5.68405 15.8977 5.29316 15.5068C4.90228 15.1159 4.90228 14.4822 5.29316 14.0913L10.8845 8.49995L5.29316 2.90864Z"
+            fill="#3F4B66"></path>
+        </svg>
+      </a>
+      <a href="#" class="animated-menu-3 bg-white p-3 border-dashed border-sky-50 border-b-2 flex items-center justify-between hover:bg-teal-50
       lg:block lg:bg-inherit lg:border-0 lg:hover:bg-transparent lg:hover:text-sky-800">
-          <span>Resume</span>
-          <svg class="lg:hidden" width="16" height="17" viewBox="0 0 16 17" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M5.29316 2.90864C4.90228 2.51775 4.90228 1.884 5.29316 1.49312C5.68405 1.10223 6.3178 1.10223 6.70869 1.49312L13.0084 7.79284C13.3989 8.18337 13.3989 8.81653 13.0084 9.20706L6.70869 15.5068C6.3178 15.8977 5.68405 15.8977 5.29316 15.5068C4.90228 15.1159 4.90228 14.4822 5.29316 14.0913L10.8845 8.49995L5.29316 2.90864Z"
-              fill="#3F4B66"></path>
-          </svg>
-        </a>
-      </nav>
-      <!-- Social Icons -->
-      <div id="menu-2" class="nav-hidden menu-4 flex justify-around w-full p-4 lg:p-0 lg:justify-end lg:gap-8 lg:bg-inherit">
-        <a href="mailto:huynhhien.15596@gmail.com" aria-label="Email">
-          <img src="../Image/icon_gmail.svg" alt="Email Icon" class="w-6 h-6">
-        </a>
-        <a href="https://www.linkedin.com/in/hienhuynh96/" target="_blank" aria-label="LinkedIn">
-          <img src="../Image/icon_linkedin.svg" alt="LinkedIn Icon" class="w-6 h-6">
-        </a>
-        <a href="https://www.skype.com" target="_blank" aria-label="Skype">
-          <img src="../Image/icon_skype.svg" alt="Skype Icon" class="w-6 h-6">
-        </a>
-      </div>
+        <span>Resume</span>
+        <svg class="lg:hidden" width="16" height="17" viewBox="0 0 16 17" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M5.29316 2.90864C4.90228 2.51775 4.90228 1.884 5.29316 1.49312C5.68405 1.10223 6.3178 1.10223 6.70869 1.49312L13.0084 7.79284C13.3989 8.18337 13.3989 8.81653 13.0084 9.20706L6.70869 15.5068C6.3178 15.8977 5.68405 15.8977 5.29316 15.5068C4.90228 15.1159 4.90228 14.4822 5.29316 14.0913L10.8845 8.49995L5.29316 2.90864Z"
+            fill="#3F4B66"></path>
+        </svg>
+      </a>
+    </nav>
+    <!-- Social Icons -->
+    <div id="menu-2" class="nav-hidden bg-white absolute lg:static top-[214px] lg:top-0 left-0 animated-menu-4 flex justify-around w-full p-4 lg:p-0 lg:justify-end lg:gap-8 lg:bg-inherit">
+      <a href="mailto:huynhhien.15596@gmail.com" aria-label="Email">
+        <img src="../Image/icon_gmail.svg" alt="Email Icon" class="w-6 h-6">
+      </a>
+      <a href="https://www.linkedin.com/in/hienhuynh96/" target="_blank" aria-label="LinkedIn">
+        <img src="../Image/icon_linkedin.svg" alt="LinkedIn Icon" class="w-6 h-6">
+      </a>
+      <a href="https://www.skype.com" target="_blank" aria-label="Skype">
+        <img src="../Image/icon_skype.svg" alt="Skype Icon" class="w-6 h-6">
+      </a>
     </div>
   </header>
   <!-- Cover -->
-  <section id="cover-section"
-    class="container mx-auto grid grid-cols-1 justify-items-center py-6 items-center space-y-8 h-3/4 lg:flex lg:justify-evenly lg:px-8 lg:py-12 md:flex-row md:space-y-0 md:space-x-12">
+  <section id="cover-section" class="container mx-auto grid grid-cols-1 justify-items-center py-6 items-center space-y-8 h-screen lg:flex lg:justify-evenly lg:px-8 lg:py-12 md:flex-row md:space-y-0 md:space-x-12">
     <!-- Image Section -->
     <div class="hidden lg:order-2 lg:block">
       <!-- Profile Image with Border -->
-      <img src="../Image/Profile_Ifmage.svg" alt="Profile" class="w-fit">
+      <img src="../Image/Profile_Image.svg" alt="Profile" class="w-fit">
     </div>
     <!-- Text Section -->
-    <div class="text-left lg:order-1">
-      <p class="lg:text-lg lg:font-semibold lg:text-blue-950">Hello, I'm Hien,</p>
-      <div class="lg:w-96 lg:h-60">
-        <span is="type-async" id="type-text"
-          class="lg:text-size-4xl lg:font-bold lg:text-blue-950 typing-async-effect">Business
-          Analyst</span>
-        <span class="blinking-cursor lg:text-5xl lg:font-bold text-blue-950">_</span>
+    <div class="grid grid-cols-1 text-center text-blue-4 lg:text-blue-950 lg:text-left lg:order-1">
+      <p class="text-center text-xl lg:text-lg lg:font-semibold">
+        Hello, I'm Hien,
+      </p>
+      <div class="text-2xl font-bold lg:w-96 lg:h-60">
+        <span is="type-async" id="type-text" class="lg:text-size-4xl lg:font-bold typing-async-effect">
+          Business Analyst
+        </span>
+        <span class="blinking-cursor lg:text-5xl lg:font-bold">_</span>
       </div>
-      <p class="lg:text-lg lg:font-semibold lg:text-blue-950">based in Vietnam.</p>
+      <p class="text-xl lg:text-lg lg:font-semibold">based in Vietnam.</p>
       <a href="#resume"
-        class="btn-cta flex items-center justify-center mt-6 px-6 py-3 rounded-md transition duration-200">
+        class="btn-cta hidden lg:flex lg:items-center lg:justify-center lg:mt-6 lg:px-6 lg:py-3 lg:rounded-md lg:transition lg:duration-200">
         Resume
       </a>
     </div>
