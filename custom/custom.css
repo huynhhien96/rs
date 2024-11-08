@@ -2,11 +2,6 @@
 .fixed-header {
     height: 70px;
     background-color: #EFF5FD;
-    /* position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 1000; */
 }
 
 /* Common colours */
@@ -106,6 +101,51 @@
     text-decoration: unset;
     color: #0165DA;
 }
+
+/* Add the following CSS for animation */
+@keyframes slide-in {
+    0% {
+        transform: translateX(-100%) scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+}
+.nav-hidden {
+    display: none;
+}
+.menu-1 {
+    animation: slide-in 0.7s cubic-bezier(0.42, 0, 0.58, 1);
+}
+.menu-2 {
+    animation: slide-in 0.8s cubic-bezier(0.42, 0, 0.58, 1);
+}
+.menu-3 {
+    animation: slide-in 0.9s cubic-bezier(0.42, 0, 0.58, 1);
+}
+.menu-4 {
+    animation: slide-in 1s cubic-bezier(0.42, 0, 0.58, 1);
+}
+@media (min-width: 1024px) {
+    .nav-hidden {
+        display: flex;
+    }
+    .menu-1 {
+        animation: none;
+    }
+    .menu-2 {
+        animation: none;
+    }
+    .menu-3 {
+        animation: none;
+    }
+    .menu-4 {
+        animation: none;
+    }
+}
+
 /* Section Cover */
 .section-fp {
     height: 100vh;
@@ -128,6 +168,14 @@
 .btn-cta:hover {
     background-color: #BAE7EC;
 }
+@media (max-width: 768px) {
+    #cover-section {
+        background-image: url("../Image/Mobile-Tablet_PI_40.SVG");
+        position: relative;
+        background-size: cover;
+    }
+}
+
 /* Experience styles */
 .date-w-fit {
     width: fit-content;

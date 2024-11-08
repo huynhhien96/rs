@@ -70,3 +70,16 @@ new PureCounter({
   selector: ".filesizecount",
   pulse: 2,
 });
+
+function toggleMenu(button) {
+  const elements = [
+    { id: "menu-1", toggleClass: "nav-hidden" },
+    { id: "menu-2", toggleClass: "nav-hidden" },
+    { id: "open-menu", toggleClass: "hidden" },
+    { id: "close-menu", toggleClass: "hidden" },
+  ];
+
+  elements.forEach(({ id, toggleClass }) => {
+    document.getElementById(id).classList.toggle(toggleClass);
+  });
+}
