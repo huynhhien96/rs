@@ -170,7 +170,7 @@
 }
 @media (max-width: 768px) {
     #cover-section {
-        background-image: url("./Image/Mobile-Tablet_PI_65.SVG");
+        background-image: url("../Image/Mobile-Tablet_PI_65.svg");
         position: relative;
         background-size: cover;
         background-position: center;
