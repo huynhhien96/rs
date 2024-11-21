@@ -99,16 +99,19 @@ function toggleMenu(button) {
   });
 }
 
-function scrollToTop() {
+function scrollToTopOfPage() {
   try {
     if (window && 'scrollTo' in window) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      throw new Error("window or scrollTo method is not available");
+      throw new Error('window or scrollTo method is not available');
     }
   } catch (error) {
-    console.error("An error occurred while scrolling to top:", error);
+    console.error('An error occurred while scrolling to top of page:', error);
   }
 }
 
-document.getElementById('home-menu').addEventListener('click', scrollToTop);
+document.getElementById('home-menu').addEventListener('click', scrollToTopOfPage);
+document.getElementById('back-to-top-button').addEventListener('click', scrollToTopOfPage);
+
+
