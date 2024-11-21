@@ -25,7 +25,7 @@
     <!-- Navigation Links -->
     <nav id="menu-1" class="nav-hidden absolute top-70 left-0 grid grid-cols-1 font-semibold text-base text-blue-950 w-full
     lg:items-center lg:justify-center lg:gap-14">
-      <a href="#" class="animated-menu-1 bg-white p-3 border-dashed border-sky-50 border-b-2 flex items-center justify-between hover:bg-teal-50
+      <a id="home-menu" href="#" class="animated-menu-1 bg-white p-3 border-dashed border-sky-50 border-b-2 flex items-center justify-between hover:bg-teal-50
       lg:block lg:bg-inherit lg:border-0 lg:hover:bg-transparent lg:hover:text-sky-800">
         <span>Home</span>
         <svg class="lg:hidden" width="16" height="17" viewBox="0 0 16 17" fill="none"
@@ -35,7 +35,7 @@
             fill="#3F4B66"></path>
         </svg>
       </a>
-      <a href="#" class="animated-menu-2 bg-white p-3 border-dashed border-sky-50 border-b-2 flex items-center justify-between hover:bg-teal-50
+      <a href="#about-section" class="animated-menu-2 bg-white p-3 border-dashed border-sky-50 border-b-2 flex items-center justify-between hover:bg-teal-50
       lg:block lg:bg-inherit lg:border-0 lg:hover:bg-transparent lg:hover:text-sky-800">
         <span>About</span>
         <svg class="lg:hidden" width="16" height="17" viewBox="0 0 16 17" fill="none"
@@ -45,7 +45,7 @@
             fill="#3F4B66"></path>
         </svg>
       </a>
-      <a href="#" class="animated-menu-3 bg-white p-3 border-dashed border-sky-50 border-b-2 flex items-center justify-between hover:bg-teal-50
+      <a href="#resume-section" class="animated-menu-3 bg-white p-3 border-dashed border-sky-50 border-b-2 flex items-center justify-between hover:bg-teal-50
       lg:block lg:bg-inherit lg:border-0 lg:hover:bg-transparent lg:hover:text-sky-800">
         <span>Resume</span>
         <svg class="lg:hidden" width="16" height="17" viewBox="0 0 16 17" fill="none"
@@ -80,7 +80,7 @@
     </div>
     <!-- Text Section -->
     <div class="grid grid-cols-1 gap-6 text-center text-sky-300 lg:text-blue-950 lg:text-left lg:order-1">
-      <p class="text-lg lg:font-semibold">
+      <p class="text-lg lg:text-2xl lg:font-semibold">
         Hello, I'm Hien,
       </p>
       <div class="text-3xl font-bold lg:w-96 lg:h-60">
@@ -89,7 +89,7 @@
         </span>
         <span class="blinking-cursor lg:text-5xl lg:font-bold">_</span>
       </div>
-      <p class="text-lg lg:font-semibold">based in Vietnam.</p>
+      <p class="text-lg lg:text-2xl lg:font-semibold">based in Vietnam.</p>
       <a href="#resume"
         class="btn-cta hidden lg:flex lg:items-center lg:justify-center lg:mt-6 lg:px-6 lg:py-3 lg:rounded-md lg:transition lg:duration-200">
         Resume
@@ -112,7 +112,7 @@
         <div class="text-blue-950">
           <h2 class="hidden lg:blocktext-2xl font-semibold text-blue-950 pb-4">Senior Business Analyst & Product Owner
           </h2>
-          <p class="pt-5 pb-5 lg:pt-0 lg:pb-6 text-base lg:text-lg">
+          <p class="py-5 lg:pt-0 lg:pb-6 text-sm lg:text-lg">
             I have more than 6 years of experience as a Business Analyst and Product Owner in technology for
             digitalchange and 2 years of experience as a software engineer.
             </br>
@@ -138,16 +138,17 @@
     </div>
   </section>
   <!-- Summary Section -->
-  <section id="summary-section" class="container mx-auto px-5 lg:px-12">
+  <section id="resume-section" class="container mx-auto px-5 lg:px-12">
     <div class="section-3-title">
       <h1 class="text-xl lg:text-7xl font-bold text-blue-950 underline-blue-4">Resume</h1>
     </div>
     <!-- Experience Section -->
-    <div class="exp-section">
-      <h2 class="text-base lg:text-3xl lg:font-semibold text-blue-950 mb-4">Professional Experience</h2>
+    <div class="exp-section text-blue-950">
+      <h2 class="text-xl lg:text-3xl font-semibold py-5">Professional Experience</h2>
       <div class="space-y-8 lg:bg-white lg:rounded-xl lg:shadow lg:py-3 lg:px-4">
         <!-- Item 1 -->
-        <div class="space-y-2 bg-white rounded-xl shadow p-4 lg:bg-inherit lg:rounded-none lg:shadow-none lg:p-0 flex flex-wrap lg:flex-nowrap items-start justify-start lg:columns-4xl">
+        <div
+          class="space-y-2 bg-white rounded-xl shadow p-4 lg:bg-inherit lg:rounded-none lg:shadow-none lg:p-0 flex flex-wrap lg:flex-nowrap items-start justify-start lg:columns-4xl">
           <div class="intro-line lg:w-1/4">
             <!-- Title - Role -->
             <div class="flex items-center lg:space-x-2 mb-1">
@@ -166,7 +167,7 @@
           </div>
           <div class="exp-line lg:w-3/4 lg:ml-5">
             <!-- Description -->
-            <ul class="list-disc text-blue-950 space-y-2 pl-4 lg:ml-6 text-base lg:text-lg">
+            <ul class="list-disc text-blue-950 space-y-2 pl-4 lg:ml-6 text-sm lg:text-lg">
               <li>Led 2 Scrum teams (10 members) through the full product life cycle, from requirements to
                 release.</li>
               <li>Held the position of Product Owner on projects.</li>
@@ -178,7 +179,8 @@
           </div>
         </div>
         <!-- Item 2 -->
-        <div class="space-y-2 bg-white rounded-xl shadow p-4 lg:bg-inherit lg:rounded-none lg:shadow-none lg:p-0 flex flex-wrap lg:flex-nowrap items-start justify-start lg:columns-4xl">
+        <div
+          class="space-y-2 bg-white rounded-xl shadow p-4 lg:bg-inherit lg:rounded-none lg:shadow-none lg:p-0 flex flex-wrap lg:flex-nowrap items-start justify-start lg:columns-4xl">
           <div class="intro-line lg:w-1/4">
             <!-- Title - Role -->
             <div class="flex items-center lg:space-x-2 mb-1">
@@ -195,7 +197,7 @@
           </div>
           <div class="exp-line lg:w-3/4 lg:ml-5">
             <!-- Description -->
-            <ul class="list-disc text-blue-950 space-y-2 pl-4 lg:ml-6 text-base lg:text-lg">
+            <ul class="list-disc text-blue-950 space-y-2 pl-4 lg:ml-6 text-sm lg:text-lg">
               <li>Worked with business operations to define processes and strategic requirements.</li>
               <li>Evaluated service integration with multiple systems, enhancing performance and payload.
               </li>
@@ -206,7 +208,8 @@
           </div>
         </div>
         <!-- Item 3 -->
-        <div class="space-y-2 bg-white rounded-xl shadow p-4 lg:bg-inherit lg:rounded-none lg:shadow-none lg:p-0 flex flex-wrap lg:flex-nowrap items-start justify-start lg:columns-4xl">
+        <div
+          class="space-y-2 bg-white rounded-xl shadow p-4 lg:bg-inherit lg:rounded-none lg:shadow-none lg:p-0 flex flex-wrap lg:flex-nowrap items-start justify-start lg:columns-4xl">
           <div class="intro-line lg:w-1/4">
             <!-- Title - Role -->
             <div class="flex items-center lg:space-x-2 mb-1">
@@ -223,7 +226,7 @@
           </div>
           <div class="exp-line lg:w-3/4 lg:ml-5">
             <!-- Description -->
-            <ul class="list-disc text-blue-950 space-y-2 pl-4 lg:ml-6 text-base lg:text-lg">
+            <ul class="list-disc text-blue-950 space-y-2 pl-4 lg:ml-6 text-sm lg:text-lg">
               <li>Collaborated with the Payment & Daily Life Service team to define solutions for Merchant
                 Mini App
                 based on a deep understanding of merchant business models.</li>
@@ -235,7 +238,8 @@
           </div>
         </div>
         <!-- Item 4 -->
-        <div class="space-y-2 bg-white rounded-xl shadow p-4 lg:bg-inherit lg:rounded-none lg:shadow-none lg:p-0 flex flex-wrap lg:flex-nowrap items-start justify-start lg:columns-4xl">
+        <div
+          class="space-y-2 bg-white rounded-xl shadow p-4 lg:bg-inherit lg:rounded-none lg:shadow-none lg:p-0 flex flex-wrap lg:flex-nowrap items-start justify-start lg:columns-4xl">
           <div class="intro-line lg:w-1/4">
             <!-- Title - Role -->
             <div class="flex items-center lg:space-x-2 mb-1">
@@ -251,7 +255,7 @@
           </div>
           <div class="exp-line lg:w-3/4 lg:ml-5">
             <!-- Description -->
-            <ul class="list-disc text-blue-950 space-y-2 pl-4 lg:ml-6 text-base lg:text-lg">
+            <ul class="list-disc text-blue-950 space-y-2 pl-4 lg:ml-6 text-sm lg:text-lg">
               <li>Prepared documents that include the business purpose, the process of implementation,
                 detailing the
                 data, drawing flow, and wireframe.</li>
@@ -266,9 +270,9 @@
       </div>
     </div>
     <!-- Education Section -->
-    <div id="section-4" class="mt-8">
-      <h2 class="text-xl lg:text-7xl font-bold text-blue-950 underline-blue-4">Education</h2>
-      <div class="grid grid-cols-2 lg:grid-cols-3 gap-5 text-blue-950">
+    <div id="section-4" class="mt-8 text-blue-950">
+      <h2 class="text-xl lg:text-3xl font-semibold pb-4">Education</h2>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-5">
         <!-- Cert 1 -->
         <div class="bg-white rounded-xl shadow py-3 px-4">
           <h3 class="text-sm lg:text-lg font-semibold mb-1 uppercase">PSPO 2</h3>
@@ -333,23 +337,24 @@
       </div>
     </div>
     <!-- Fact -->
-    <div id="section-5 text-blue-950" class="mt-8">
+    <div id="section-5" class="mt-8 text-blue-950">
       <h2 class="text-xl lg:text-3xl font-semibold underline-blue-2">Fact</h2>
-      <p class="py-6 text-base lg:text-lg">Allow me to share some captivating insights about my journey. These stats have
+      <p class="text-sm lg:text-lg py-4">Allow me to share some captivating insights about my journey. These stats
+        have
         taken
         countless hours to meticulously compile!</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 bg-white p-4 rounded-xl shadow">
         <!-- Item 1 -->
         <div class="grid grid-cols-4 items-start lg:mr-2 w-full">
           <div class="grid grid-cols-4 col-span-full">
-            <img class="w-16 justify-self-center" src="./Image/fact-handshake.svg" alt="">
+            <img class="w-10 lg:w-16 justify-self-center" src="./Image/fact-handshake.svg" alt="">
             <div class="col-span-3 text-blue-950 text-4xl font-bold ml-4">
               <p data-purecounter-start="0" data-purecounter-end="4" data-purecounter-once="true"
                 data-purecounter-duration="0.8" data-purecounter-separator="true" data-purecounter-legacy="true"
                 class="inline-block align-sub purecounter">0</p>
             </div>
           </div>
-          <p class="fact-detail col-span-3 col-start-2 pl-4">
+          <p class="fact-detail col-span-3 col-start-2 pl-4 text-sm lg:text-lg">
             <span class="font-semibold">projects were signed</span><span class=""> after the Assessment
               phase</span>
           </p>
@@ -364,7 +369,7 @@
                 class="inline-block align-sub purecounter">0</p>
             </div>
           </div>
-          <p class="fact-detail col-span-3 col-start-2 pl-4">
+          <p class="fact-detail col-span-3 col-start-2 pl-4 text-sm lg:text-lg">
             <span class="font-semibold">projects</span><span class=""> have been done so far in my
               career</span>
           </p>
@@ -379,7 +384,7 @@
                 class="inline-block align-sub purecounter">0</p>
             </div>
           </div>
-          <p class="fact-detail col-span-3 col-start-2 pl-4">
+          <p class="fact-detail col-span-3 col-start-2 pl-4 text-sm lg:text-lg">
             <span class="font-semibold">members</span><span class=""> is the number I have
               managed.</span>
           </p>
@@ -394,7 +399,7 @@
                 class="inline-block align-sub purecounter">0</p>
             </div>
           </div>
-          <p class="fact-detail col-span-3 col-start-2 pl-4">
+          <p class="fact-detail col-span-3 col-start-2 pl-4 text-sm lg:text-lg">
             <span class="font-semibold">new customers</span><span class=""> in 2 weeks after launching
               product</span>
           </p>
@@ -402,9 +407,9 @@
       </div>
     </div>
     <!-- Skills -->
-    <div id="section-5 text-blue-950" class="mt-8">
-      <h2 class="text-3xl font-semibold">Skills</h2>
-      <p class="py-6 text-sm">Learned some technical skills during my work. I only describe the skills that
+    <div id="section-6" class="mt-8 text-blue-950">
+      <h2 class="text-xl lg:text-3xl font-semibold">Skills</h2>
+      <p class="text-sm lg:text-lg py-4">Learned some technical skills during my work. I only describe the skills that
         can be
         visualized. The soft skills are experiences you and I can exchange or work on.</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -471,129 +476,154 @@
         </div>
       </div>
     </div>
-      <!-- Highlight Projects -->
-      <div id="section-5" class="mt-8">
-        <h2 class="text-3xl font-semibold text-blue-950">Highlight Projects</h2>
-        <p class="py-6 text-blue-950">Some projects that I have worked on</p>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
-          <!-- Finance Domain 1 -->
-          <div class="bg-white rounded-xl shadow py-3 px-4">
-            <h2 class="text-2xl font-semibold text-blue-950">1. Finance domain</h2>
-            <hr class="border-2 border-blue-1 rounded my-3">
-            <div class="grid grid-cols-1 gap-5">
-              <!-- LOAN ORIGINATION SYSTEM -->
-              <div class="space-y-2">
-                <h3 class="text-lg font-semibold text-blue-950">1.1. Loan Origination System (LOS)</h3>
-                <p class="text-blue-950">
-                  This system is the finance company's core when it receives the loan application from
-                  any channel. It
-                  will use all the customer's information to approve or reject that customer through
-                  the decision
-                  engine.
-                </p>
-              </div>
-              <!-- ANTI FRAUD SYSTEM -->
-              <div class="space-y-2">
-                <h3 class="text-lg font-semibold text-blue-950 mb-1">1.2. Anti-Fraud System</h3>
-                <p class="text-blue-950">
-                  Joined when the project is planning until it releases a new version of the
-                  Anti-Fraud system, which uses the Pegasystems platform and moves the data from
-                  on-premise to the cloud.
-                  All APIs will be documented and monitored through Mulesoft.
-                  The system allows users to monitor cases in near real-time and collect all other
-                  internal systems' data.
-                </p>
-              </div>
+    <!-- Highlight Projects -->
+    <div id="section-7" class="mt-8 text-blue-950">
+      <h2 class="text-xl lg:text-3xl font-semibold">Highlight Projects</h2>
+      <p class="text-sm lg:text-lg py-4">Some projects that I have worked on</p>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <!-- Finance Domain 1 -->
+        <div class="bg-white rounded-xl shadow py-3 px-4">
+          <h2 class="text-base lg:text-2xl font-semibold">1. Finance domain</h2>
+          <hr class="border-1 border-blue-1 rounded my-3">
+          <div class="grid grid-cols-1 gap-5">
+            <!-- LOAN ORIGINATION SYSTEM -->
+            <div class="space-y-2">
+              <h3 class="text-sm lg:text-lg font-semibold">1.1. Loan Origination System (LOS)</h3>
+              <p class="text-sm lg:text-lg">
+                This system is the finance company's core when it receives the loan application from
+                any channel. It
+                will use all the customer's information to approve or reject that customer through
+                the decision
+                engine.
+              </p>
             </div>
-          </div>
-          <!-- Banking Domain 2 -->
-          <div class="bg-white rounded-xl shadow py-3 px-4">
-            <h2 class="text-2xl font-semibold text-blue-950">2. Bank domain</h2>
-            <hr class="border-2 border-blue-1 rounded my-3">
-            <div class="grid grid-cols-1 gap-5">
-              <!-- Chargeback Process -->
-              <div class="space-y-2">
-                <h3 class="text-lg font-semibold text-blue-950">2.1. Chargeback Process</h3>
-                <p class="text-blue-950">
-                  Released the Chargeback processing on the Customer Service Management system.
-                  This feature allows the Customer Service Operator to create a complaint case from
-                  the customer and follow it until it reaches the final status.
-                  This feature helps the Card Operator save time managing and following them on the
-                  internal system with International Payment Card Parties.
-                </p>
-              </div>
-              <!-- Card Issuing Process -->
-              <div class="space-y-2">
-                <h3 class="text-lg font-semibold text-blue-950">2.2. Credit Card Issuing Process</h3>
-                <p class="text-blue-950">
-                  Card issuing allows for card payment transactions, providing users with quick and
-                  easy financial flexibility. This enables users to make purchases at point-of-sale
-                  (POS), online, and withdraw cash from ATMs through the finance company's core.
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- Insurance Domain 3 -->
-          <div class="bg-white rounded-xl shadow py-3 px-4">
-            <h2 class="text-2xl font-semibold text-blue-950">3. Insurance domain</h2>
-            <hr class="border-2 border-blue-1 rounded my-3">
-            <div class="grid grid-cols-1 gap-5">
-              <!-- Chargeback Process -->
-              <div class="space-y-2">
-                <h3 class="text-lg font-semibold text-blue-950">3.1. Internal Insurance System</h3>
-                <p class="text-blue-950">
-                  Including two systems: an Internal Insurance System and a Provider Management
-                  System.
-                  One system allows users to manage internal patient data and insurance rules.
-                  The provider management system allows hospital users to check a patient's
-                  eligibility or the patient benefits table.
-                </p>
-              </div>
-              <!-- Claim Automation Mobile App -->
-              <div class="space-y-2">
-                <h3 class="text-lg font-semibold text-blue-950">3.2. Claim Automation Mobile App</h3>
-                <p class="text-blue-950">
-                  Released the user-friendly mobile app that simplifies the insurance claims process.
-                  With just a few taps, customers can submit claims anytime and receive real-time
-                  status updates.
-                  Secure document uploads and step-by-step guidance ensure a hassle-free experience.
-                  Empowering users, this app is your go-to solution for quick and efficient claims
-                  management.
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- E-wallet Domain 4 -->
-          <div class="bg-white rounded-xl shadow py-3 px-4">
-            <h2 class="text-2xl font-semibold text-blue-950">4. E-wallet</h2>
-            <hr class="border-2 border-blue-1 rounded my-3">
-            <div class="grid grid-cols-1 gap-5">
-              <!-- Chargeback Process -->
-              <div class="space-y-2">
-                <h3 class="text-lg font-semibold text-blue-950">4.1. Mini App Platform</h3>
-                <p class="text-blue-950">
-                  Mini-App Platform is an integration system that allows other companies or brands to
-                  combine their mobile apps into one super-app.
-                  The system exposes many services for different businesses.
-                <p class="italic font-semibold text-blue-950">Case Study: 7-Eleven, Highlands Coffee, The
-                  Coffee House</p>
-                </p>
-              </div>
-              <!-- Claim Automation Mobile App -->
-              <div class="space-y-2">
-                <h3 class="text-lg font-semibold text-blue-950">4.2. Loyalty Program</h3>
-                <p class="text-blue-950">
-                  The loyalty program is a group of micro-services that supports payment integration
-                  to retrieve loyalty points.
-                  It can be used to register new members quickly without filling out the customer
-                  information form.
-                <p class="italic font-semibold text-blue-950">Case Study: 7-Eleven,...</p>
-                </p>
-              </div>
+            <!-- ANTI FRAUD SYSTEM -->
+            <div class="space-y-2">
+              <h3 class="text-sm lg:text-lg font-semibold">1.2. Anti-Fraud System</h3>
+              <p class="text-sm lg:text-lg">
+                Joined when the project is planning until it releases a new version of the
+                Anti-Fraud system, which uses the Pegasystems platform and moves the data from
+                on-premise to the cloud.
+                All APIs will be documented and monitored through Mulesoft.
+                The system allows users to monitor cases in near real-time and collect all other
+                internal systems' data.
+              </p>
             </div>
           </div>
         </div>
-      </div>  
+        <!-- Banking Domain 2 -->
+        <div class="bg-white rounded-xl shadow py-3 px-4">
+          <h2 class="text-base lg:text-2xl font-semibold">2. Bank domain</h2>
+          <hr class="border-1 border-blue-1 rounded my-3">
+          <div class="grid grid-cols-1 gap-5">
+            <!-- Chargeback Process -->
+            <div class="space-y-2">
+              <h3 class="text-sm lg:text-lg font-semibold">2.1. Chargeback Process</h3>
+              <p class="text-sm lg:text-lg">
+                Released the Chargeback processing on the Customer Service Management system.
+                This feature allows the Customer Service Operator to create a complaint case from
+                the customer and follow it until it reaches the final status.
+                This feature helps the Card Operator save time managing and following them on the
+                internal system with International Payment Card Parties.
+              </p>
+            </div>
+            <!-- Card Issuing Process -->
+            <div class="space-y-2">
+              <h3 class="text-sm lg:text-lg font-semibold">2.2. Credit Card Issuing Process</h3>
+              <p class="text-sm lg:text-lg">
+                Card issuing allows for card payment transactions, providing users with quick and
+                easy financial flexibility. This enables users to make purchases at point-of-sale
+                (POS), online, and withdraw cash from ATMs through the finance company's core.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Insurance Domain 3 -->
+        <div class="bg-white rounded-xl shadow py-3 px-4">
+          <h2 class="text-base lg:text-2xl font-semibold">3. Insurance domain</h2>
+          <hr class="border-1 border-blue-1 rounded my-3">
+          <div class="grid grid-cols-1 gap-5">
+            <!-- Chargeback Process -->
+            <div class="space-y-2">
+              <h3 class="text-sm lg:text-lg font-semibold">3.1. Internal Insurance System</h3>
+              <p class="text-sm lg:text-lg">
+                Including two systems: an Internal Insurance System and a Provider Management
+                System.
+                One system allows users to manage internal patient data and insurance rules.
+                The provider management system allows hospital users to check a patient's
+                eligibility or the patient benefits table.
+              </p>
+            </div>
+            <!-- Claim Automation Mobile App -->
+            <div class="space-y-2">
+              <h3 class="text-sm lg:text-lg font-semibold">3.2. Claim Automation Mobile App</h3>
+              <p class="text-sm lg:text-lg">
+                Released the user-friendly mobile app that simplifies the insurance claims process.
+                With just a few taps, customers can submit claims anytime and receive real-time
+                status updates.
+                Secure document uploads and step-by-step guidance ensure a hassle-free experience.
+                Empowering users, this app is your go-to solution for quick and efficient claims
+                management.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- E-wallet Domain 4 -->
+        <div class="bg-white rounded-xl shadow py-3 px-4">
+          <h2 class="text-base lg:text-2xl font-semibold">4. E-wallet</h2>
+          <hr class="border-1 border-blue-1 rounded my-3">
+          <div class="grid grid-cols-1 gap-5">
+            <!-- Chargeback Process -->
+            <div class="space-y-2">
+              <h3 class="text-sm lg:text-lg font-semibold">4.1. Mini App Platform</h3>
+              <p class="text-sm lg:text-lg">
+                Mini-App Platform is an integration system that allows other companies or brands to
+                combine their mobile apps into one super-app.
+                The system exposes many services for different businesses.
+              <p class="text-sm lg:text-lg italic font-semibold">Case Study: 7-Eleven, Highlands Coffee, The
+                Coffee House</p>
+              </p>
+            </div>
+            <!-- Claim Automation Mobile App -->
+            <div class="space-y-2">
+              <h3 class="text-sm lg:text-lg font-semibold">4.2. Loyalty Program</h3>
+              <p class="text-sm lg:text-lg">
+                The loyalty program is a group of micro-services that supports payment integration
+                to retrieve loyalty points.
+                It can be used to register new members quickly without filling out the customer
+                information form.
+              <p class="text-sm lg:text-lg italic font-semibold">Case Study: 7-Eleven,...</p>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Contact Section -->
+    <section id="contact-section" class="container mx-auto py-12 lg:py-32">
+      <div class="section-2-title">
+        <h1 class="text-xl lg:text-7xl font-bold text-blue-950 underline-blue-4">Contract</h1>
+        <p class="text-sm lg:text-lg text-blue-1 py-6">
+          If you have any questions, please feel free to contact me.
+        </p>
+      </div>
+      <div class="section-4-content">
+        <div class="grid grid-cols-1 gap-5 text-sm lg:text-lg text-blue-950">
+          <div class="space-y-2">
+            <h3 class="font-semibold">Email</h3>
+            <p class="">
+              <a href="mailto:huynhhien.15596@gmail.com" class="">huynhhien.15596@gmail.com</a>
+            </p>
+          </div>
+          <div class="space-y-2">
+            <h3 class="font-semibold">Phone</h3>
+            <p class="">
+              <a href="tel:+84-70-490-2582" class="">+84-70-490-2582</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </section>
 </body>
 <script src="./js/purecounter_vanilla.js"></script>

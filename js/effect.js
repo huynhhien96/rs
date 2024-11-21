@@ -98,3 +98,17 @@ function toggleMenu(button) {
     }
   });
 }
+
+function scrollToTop() {
+  try {
+    if (window && 'scrollTo' in window) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      throw new Error("window or scrollTo method is not available");
+    }
+  } catch (error) {
+    console.error("An error occurred while scrolling to top:", error);
+  }
+}
+
+document.getElementById('home-menu').addEventListener('click', scrollToTop);
