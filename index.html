@@ -13,21 +13,21 @@
   <header class="sticky top-0 z-50 bg-white w-full container p-1
   lg:static lg:bg-blue-50 lg:px-4 lg:flex lg:items-center lg:mx-auto lg:py-4">
     <!-- Logo -->
-    <div
-      class="flex justify-between text-blue-950 font-bold text-xl px-3 py-4 w-full h-fit lg:block lg:bg-inherit lg:header-name lg:text-2xl">
+    <div class="flex justify-between text-blue-950 font-semibold text-lg px-4 lg:px-0 py-4 lg:py-0 w-full h-fit lg:block lg:bg-inherit lg:header-name lg:text-xl">
       <p class="lg:hidden">Hien Huynh</p>
-      <p class="max-lg:hidden">Huynh Duc Hien</p>
+      <!-- <p class="hidden lg:block bg-blue-950 text-white w-fit">Welcome</p> -->
+      <img class="hidden lg:block h-10" src="./Image/Welcome logo 2.svg" alt="Logo">
       <button onclick="toggleMenu(this)" type="button" class="btn-menu lg:hidden" aria-expanded="false">
         <img id="open-menu" class="w-6" src="./Image/Menu.svg" alt="">
         <img id="close-menu" class="w-6 hidden" src="./Image/Close Menu.svg" alt="">
       </button>
     </div>
     <!-- Navigation Links -->
-    <nav id="menu-1" class="nav-hidden absolute top-70 left-0 grid grid-cols-1 font-semibold text-base text-blue-950 w-full
-    lg:items-center lg:justify-center lg:gap-14">
-      <a id="home-menu" href="#" class="animated-menu-1 bg-white p-3 border-dashed border-sky-50 border-b-2 flex items-center justify-between hover:bg-teal-50
+    <nav id="menu-1" class="nav-hidden-1 absolute top-70 left-0 lg:static grid grid-cols-1 font-semibold text-base text-blue-950 w-full
+    lg:items-center lg:justify-end lg:gap-14 text-nowrap">
+      <a id="home-menu" href="#" class="animated-menu-1 bg-white p-4 border-dashed border-sky-50 border-b-2 flex items-center justify-between hover:bg-teal-50
       lg:block lg:bg-inherit lg:border-0 lg:hover:bg-transparent lg:hover:text-sky-800">
-        <span>Home</span>
+        <span class="lg:text-cyan-500">Home</span>
         <svg class="lg:hidden" width="16" height="17" viewBox="0 0 16 17" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd"
@@ -35,9 +35,9 @@
             fill="#3F4B66"></path>
         </svg>
       </a>
-      <a href="#about-section" class="animated-menu-2 bg-white p-3 border-dashed border-sky-50 border-b-2 flex items-center justify-between hover:bg-teal-50
+      <a href="#about-section" class="animated-menu-2 bg-white p-4 border-dashed border-sky-50 border-b-2 flex items-center justify-between hover:bg-teal-50
       lg:block lg:bg-inherit lg:border-0 lg:hover:bg-transparent lg:hover:text-sky-800">
-        <span>About</span>
+        <span>About me</span>
         <svg class="lg:hidden" width="16" height="17" viewBox="0 0 16 17" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd"
@@ -45,7 +45,7 @@
             fill="#3F4B66"></path>
         </svg>
       </a>
-      <a href="#resume-section" class="animated-menu-3 bg-white p-3 border-dashed border-sky-50 border-b-2 flex items-center justify-between hover:bg-teal-50
+      <a href="#resume-section" class="animated-menu-3 bg-white p-4 border-dashed border-sky-50 border-b-2 flex items-center justify-between hover:bg-teal-50
       lg:block lg:bg-inherit lg:border-0 lg:hover:bg-transparent lg:hover:text-sky-800">
         <span>Resume</span>
         <svg class="lg:hidden" width="16" height="17" viewBox="0 0 16 17" fill="none"
@@ -57,8 +57,7 @@
       </a>
     </nav>
     <!-- Social Icons -->
-    <div id="menu-2"
-      class="nav-hidden bg-white absolute lg:static top-[214px] lg:top-0 left-0 animated-menu-4 flex justify-around w-full p-4 lg:p-0 lg:justify-end lg:gap-8 lg:bg-inherit">
+    <div id="menu-2" class="nav-hidden-2 bg-white absolute lg:static top-[214px] lg:top-0 left-0 animated-menu-4 flex justify-around w-full px-4 py-6 lg:p-0 lg:justify-end lg:gap-8 lg:bg-inherit">
       <a href="mailto:huynhhien.15596@gmail.com" aria-label="Email">
         <img src="./Image/icon_gmail.svg" alt="Email Icon" class="w-6 h-6">
       </a>
@@ -90,23 +89,19 @@
         <span class="blinking-cursor lg:text-5xl lg:font-bold">_</span>
       </div>
       <p class="text-lg lg:text-2xl lg:font-semibold">based in Vietnam.</p>
-      <a href="#resume"
-        class="btn-cta hidden lg:flex lg:items-center lg:justify-center lg:mt-6 lg:px-6 lg:py-3 lg:rounded-md lg:transition lg:duration-200">
-        Resume
-      </a>
     </div>
   </section>
   <!-- About -->
   <section id="about-section" class="container mx-auto px-5 py-12 lg:px-12 lg:py-32">
     <div class="section-2-title">
-      <h1 class="text-xl lg:text-7xl font-bold text-blue-950 underline-blue-4">About</h1>
+      <h1 class="text-xl lg:text-7xl font-bold text-blue-950 underline-blue-4">About me</h1>
       <p class="hidden lg:block lg:text-lg text-blue-950 lg:py-6">
         Focus on prioritize commitment and assigned work. My hobby is always seeking to learn and conquer challenges.
       </p>
     </div>
-    <div class="flex flex-wrap lg:flex-nowrap justify-between">
+    <div class="flex flex-wrap lg:flex-nowrap justify-between lg:bg-white lg:rounded-xl lg:shadow lg:py-3 lg:px-4">
       <!-- Left Side - Profile Image -->
-      <img src="./Image/Profile_2.svg" alt="Profile" class="hidden lg:block">
+      <img src="./Image/Profile_2.svg" alt="Profile" class="hidden lg:w-48 lg:block">
       <!-- Right Side - Content -->
       <div class="lg:ml-10">
         <div class="text-blue-950">
@@ -122,17 +117,17 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-8 text-blue-950 text-sm lg:text-base">
           <div class="hidden lg:flex"><span class="font-semibold w-24">Birthday:</span> <span>15 May 1996</span></div>
-          <div class="hidden lg:flex"><span class="font-semibold w-24">Degree:</span> <span>Bachelor Degree</span></div>
-          <div class="flex"><span class="font-semibold w-24">Phone:</span> <span>+84 704 902 582</span></div>
+          <div class="hidden lg:flex"><span class="font-semibold w-24">Degree:</span> <span>Bachelor's Degree as a Software engineer</span></div>
+          <div class="flex"><span class="font-semibold w-24">Phone:</span> <a href="tel:+84 704 902 582">+84 704 902 582</a></div>
           <div class="flex"><span class="font-semibold w-24">Email:</span>
-            <span>huynhhien.15596@gmail.com</span>
+            <a href="mailto:huynhhien.15596@gmail.com">huynhhien.15596@gmail.com</a>
           </div>
           <div class="flex"><span class="font-semibold w-24">City:</span> <span>Ho Chi Minh VN</span></div>
-          <div class="flex"><span class="font-semibold w-24">Skype:</span> <span>live:duchien15596</span>
+          <div class="flex"><span class="font-semibold w-24">Skype:</span> <a href="skype:live:duchien15596?chat">live:duchien15596</a>
           </div>
           <div class="flex"><span class="font-semibold w-24">Website:</span> <span>You’re looking at it</span>
           </div>
-          <div class="flex"><span class="font-semibold w-24">Freelance:</span> <span>Available</span></div>
+          <div class="flex"><span class="font-semibold w-24">LinkedIn:</span> <a href="https://www.linkedin.com/in/hienhuynh96/" target="_blank">HienHuynh</a></div>
         </div>
       </div>
     </div>

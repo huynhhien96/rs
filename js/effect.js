@@ -73,8 +73,8 @@ new PureCounter({
 
 function toggleMenu(button) {
   const elements = [
-    { id: "menu-1", toggleClass: "nav-hidden" },
-    { id: "menu-2", toggleClass: "nav-hidden" },
+    { id: "menu-1", toggleClass: "nav-hidden-1" },
+    { id: "menu-2", toggleClass: "nav-hidden-2" },
     { id: "open-menu", toggleClass: "hidden" },
     { id: "close-menu", toggleClass: "hidden" },
   ];
