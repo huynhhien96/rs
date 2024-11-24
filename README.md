@@ -7,6 +7,7 @@ This repository contains the source code for a website built using **HTML**, **J
 - **HTML**: For the website structure.
 - **JavaScript**: To handle interactivity and dynamic content.
 - **Tailwind CSS**: A utility-first CSS framework for designing the website.
+- **Github**: For the free domain
 
 ## Getting Started
 
