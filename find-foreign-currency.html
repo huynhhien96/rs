@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So sánh Lãi suất Ngoại tệ Không kỳ hạn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        tbody tr:hover {
+            background-color: #f9fafb;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        .container {
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .number-cell {
+            text-align: right;
+            padding-right: 1rem;
+        }
+        .currency-symbol {
+            font-size: 0.8em;
+            color: #6b7280;
+            margin-left: 2px;
+        }
+        /* Đảm bảo input căn phải để dễ nhìn khi định dạng số */
+        #amount {
+            text-align: right;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-5 md:p-10">
+
+    <div class="container bg-white p-6 md:p-8 rounded-lg shadow-md">
+        <h1 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-6">So sánh Lãi suất Tiền gửi Ngoại tệ Không kỳ hạn</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 items-end">
+            <div>
+                <label for="currency" class="block text-sm font-medium text-gray-700 mb-1">Chọn loại ngoại tệ:</label>
+                <select id="currency" name="currency" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md shadow-sm">
+                    </select>
+            </div>
+
+            <div>
+                <label for="amount" class="block text-sm font-medium text-gray-700 mb-1">Số tiền dự định gửi:</label>
+                <input type="text" id="amount" name="amount" inputmode="numeric" placeholder="Nhập số tiền để tính lãi" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                 <p class="text-xs text-gray-500 mt-1">Lọc theo số dư tối thiểu & tính lãi dự thu.</p>
+            </div>
+
+            <div class="md:col-span-1 flex justify-center md:justify-end">
+                <button id="findButton" class="w-full md:w-auto inline-flex justify-center items-center px-6 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out">
+                    Tìm & Tính lãi
+                </button>
+            </div>
+        </div>
+
+        <div id="results" class="mt-8">
+             <p class="text-center text-gray-500">Vui lòng chọn loại ngoại tệ, nhập số tiền (tùy chọn) và nhấn nút tìm kiếm.</p>
+             </div>
+
+         <div class="mt-8 text-xs text-gray-500 border-t pt-4">
+            <p><strong>Lưu ý quan trọng:</strong></p>
+            <ul class="list-disc list-inside ml-4">
+                <li>Thông tin lãi suất, số dư tối thiểu và lãi dự thu trong bảng này chỉ mang tính tham khảo và được tổng hợp/tính toán dựa trên các nguồn công khai tại thời điểm cập nhật gần nhất (xem cột "Cập nhật").</li>
+                <li>Lãi dự thu được tính dựa trên số tiền bạn nhập, lãi suất công bố và giả định 1 tháng = 30 ngày, 1 năm = 365 ngày. Lãi thực tế có thể khác biệt tùy theo cách tính của ngân hàng và ngày gửi/rút thực tế.</li>
+                <li>Lãi suất tiền gửi USD không kỳ hạn của cá nhân/tổ chức được quy định là <strong>0%/năm</strong> theo quy định của Ngân hàng Nhà nước Việt Nam.</li>
+                <li>Lãi suất và điều kiện có thể thay đổi bất cứ lúc nào mà không cần báo trước.</li>
+                <li><strong>Vui lòng liên hệ trực tiếp hoặc truy cập website chính thức của ngân hàng để xác nhận thông tin mới nhất</strong> trước khi thực hiện giao dịch.</li>
+                 <li>Số dư tối thiểu hiển thị có thể là số dư để mở tài khoản, duy trì tài khoản hoặc để tránh phí, tùy thuộc vào quy định của từng ngân hàng.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // --- Dữ liệu Ngân hàng ---
+        const bankData = [
+             {
+                name: "Vietcombank",
+                rates: [
+                    { currency: "USD", rate: 0.0, minBalance: 10, minBalanceCurrency: "USD", type: "Duy trì TKTT", updated: "2025-04-24", sourceRef: 21 },
+                    { currency: "EUR", rate: 0.3, minBalance: 10, minBalanceCurrency: "EUR", type: "Duy trì TKTT", updated: "2025-04-24", sourceRef: 21 }
+                ],
+                website: "https://vietcombank.com.vn/vi-VN/KHCN/Cong-cu-Tien-ich/KHCN---Lai-suat"
+            },
+            {
+                name: "VietinBank",
+                rates: [
+                    { currency: "USD", rate: 0.0, minBalance: null, minBalanceCurrency: "USD", type: "Không rõ", updated: "2025-04-24", sourceRef: 20 },
+                    { currency: "EUR", rate: 0.1, minBalance: null, minBalanceCurrency: "EUR", type: "Không rõ", updated: "2025-04-24", sourceRef: 20 }
+                ],
+                website: "https://www.vietinbank.vn/ca-nhan/cong-cu-tien-ich/lai-suat-khcn"
+            },
+             {
+                name: "BIDV",
+                rates: [
+                    { currency: "USD", rate: 0.0, minBalance: 10, minBalanceCurrency: "USD", type: "Duy trì TKTT", updated: "2025-04-24", sourceRef: 33 },
+                    { currency: "EUR", rate: 0.1, minBalance: 10, minBalanceCurrency: "EUR", type: "Duy trì TKTT", updated: "2025-04-24", sourceRef: 33 },
+                    { currency: "AUD", rate: 0.1, minBalance: 0, minBalanceCurrency: "AUD", type: "Duy trì TKTT", updated: "2025-04-24", sourceRef: 33 },
+                    { currency: "GBP", rate: 0.0, minBalance: 0, minBalanceCurrency: "GBP", type: "Duy trì TKTT", updated: "2025-04-24", sourceRef: 51 },
+                    { currency: "JPY", rate: 0.0, minBalance: 0, minBalanceCurrency: "JPY", type: "Duy trì TKTT", updated: "2025-04-24", sourceRef: 51 },
+                    { currency: "SGD", rate: 0.0, minBalance: 0, minBalanceCurrency: "SGD", type: "Duy trì TKTT", updated: "2025-04-24", sourceRef: 51 }
+                ],
+                website: "https://bidv.com.vn/vn/ca-nhan/cong-cu-tien-ich/lai-suat"
+            },
+            {
+                name: "Agribank",
+                rates: [
+                    { currency: "USD", rate: 0.0, minBalance: null, minBalanceCurrency: "USD", type: "Không rõ", updated: "2025-04-24", sourceRef: 24 },
+                    { currency: "EUR", rate: 0.0, minBalance: null, minBalanceCurrency: "EUR", type: "Không rõ", updated: "2025-04-24", sourceRef: 24 }
+                ],
+                website: "https://www.agribank.com.vn/vn/lai-suat"
+            },
+             {
+                name: "Techcombank",
+                rates: [
+                    { currency: "USD", rate: 0.0, minBalance: null, minBalanceCurrency: "USD", type: "Cần xác nhận KKHT", updated: "2025-04-24", sourceRef: 22 },
+                    { currency: "EUR", rate: 0.0, minBalance: null, minBalanceCurrency: "EUR", type: "Cần xác nhận KKHT", updated: "2025-04-24", sourceRef: 22 },
+                    { currency: "AUD", rate: 0.0, minBalance: null, minBalanceCurrency: "AUD", type: "Cần xác nhận KKHT", updated: "2025-04-24", sourceRef: 22 },
+                    { currency: "GBP", rate: 0.0, minBalance: null, minBalanceCurrency: "GBP", type: "Cần xác nhận KKHT", updated: "2025-04-24", sourceRef: 22 },
+                    { currency: "JPY", rate: 0.0, minBalance: null, minBalanceCurrency: "JPY", type: "Cần xác nhận KKHT", updated: "2025-04-24", sourceRef: 22 },
+                    { currency: "SGD", rate: 0.0, minBalance: null, minBalanceCurrency: "SGD", type: "Cần xác nhận KKHT", updated: "2025-04-24", sourceRef: 22 }
+                ],
+                 website: "https://techcombank.com/cong-cu-tien-ich/bieu-phi-lai-suat"
+            },
+            {
+                name: "ACB",
+                rates: [
+                    { currency: "USD", rate: 0.0, minBalance: 0, minBalanceCurrency: "USD", type: "Duy trì TK", updated: "2025-04-24", sourceRef: 27 },
+                    { currency: "EUR", rate: 0.0, minBalance: 0, minBalanceCurrency: "EUR", type: "Duy trì TK", updated: "2025-04-24", sourceRef: 27 },
+                    { currency: "JPY", rate: 0.0, minBalance: 0, minBalanceCurrency: "JPY", type: "Duy trì TK", updated: "2025-04-24", sourceRef: 27 }
+                ],
+                website: "https://acb.com.vn/lai-suat-tien-gui"
+            },
+            {
+                name: "Sacombank",
+                rates: [
+                    { currency: "USD", rate: 0.0, minBalance: null, minBalanceCurrency: "USD", type: "Không rõ", updated: "2025-04-24", sourceRef: 23 },
+                    { currency: "EUR", rate: 0.02, minBalance: null, minBalanceCurrency: "EUR", type: "Không rõ", updated: "2025-04-24", sourceRef: 23 },
+                    { currency: "AUD", rate: 0.0, minBalance: null, minBalanceCurrency: "AUD", type: "Không rõ", updated: "2025-04-24", sourceRef: 23 },
+                    { currency: "GBP", rate: 0.0, minBalance: null, minBalanceCurrency: "GBP", type: "Không rõ", updated: "2025-04-24", sourceRef: 23 },
+                    { currency: "JPY", rate: 0.0, minBalance: null, minBalanceCurrency: "JPY", type: "Không rõ", updated: "2025-04-24", sourceRef: 23 },
+                    { currency: "SGD", rate: 0.0, minBalance: null, minBalanceCurrency: "SGD", type: "Không rõ", updated: "2025-04-24", sourceRef: 23 }
+                ],
+                website: "https://www.sacombank.com.vn/ca-nhan/cong-cu-tien-ich/lai-suat.html"
+            },
+             {
+                name: "HDBank",
+                rates: [
+                    { currency: "USD", rate: 0.0, minBalance: null, minBalanceCurrency: "USD", type: "Không rõ", updated: "2025-04-24", sourceRef: 29 },
+                    { currency: "EUR", rate: 0.0, minBalance: null, minBalanceCurrency: "EUR", type: "Không rõ", updated: "2025-04-24", sourceRef: 29 },
+                    { currency: "AUD", rate: 0.1, minBalance: null, minBalanceCurrency: "AUD", type: "Không rõ", updated: "2025-04-24", sourceRef: 29 },
+                    { currency: "GBP", rate: 0.2, minBalance: null, minBalanceCurrency: "GBP", type: "Không rõ", updated: "2025-04-24", sourceRef: 29 }
+                ],
+                website: "https://hdbank.com.vn/vi/personal/interest-rate"
+            },
+             {
+                name: "HSBC Việt Nam",
+                rates: [
+                    { currency: "USD", rate: 0.0, minBalance: 3000000, minBalanceCurrency: "VND", type: "TB tháng (tránh phí)", updated: "2025-04-24", sourceRef: 34 },
+                    { currency: "EUR", rate: 0.0, minBalance: 3000000, minBalanceCurrency: "VND", type: "TB tháng (tránh phí)", updated: "2025-04-24", sourceRef: 34 },
+                    { currency: "AUD", rate: 0.1, minBalance: 3000000, minBalanceCurrency: "VND", type: "TB tháng (tránh phí)", updated: "2025-04-24", sourceRef: 34 },
+                    { currency: "GBP", rate: 0.1, minBalance: 3000000, minBalanceCurrency: "VND", type: "TB tháng (tránh phí)", updated: "2025-04-24", sourceRef: 34 },
+                    { currency: "JPY", rate: 0.0, minBalance: 3000000, minBalanceCurrency: "VND", type: "TB tháng (tránh phí)", updated: "2025-04-24", sourceRef: 34 },
+                    { currency: "SGD", rate: 0.1, minBalance: 3000000, minBalanceCurrency: "VND", type: "TB tháng (tránh phí)", updated: "2025-04-24", sourceRef: 34 }
+                ],
+                website: "https://www.hsbc.com.vn/en-vn/accounts/"
+            },
+            {
+                name: "Standard Chartered VN",
+                rates: [
+                    { currency: "USD", rate: 0.0, minBalance: null, minBalanceCurrency: "USD", type: "Cần xác nhận KKHT", updated: "2025-04-24", sourceRef: 30 },
+                    { currency: "EUR", rate: 0.0, minBalance: null, minBalanceCurrency: "EUR", type: "Cần xác nhận KKHT", updated: "2025-04-24", sourceRef: 30 },
+                    { currency: "AUD", rate: 0.0, minBalance: null, minBalanceCurrency: "AUD", type: "Cần xác nhận KKHT", updated: "2025-04-24", sourceRef: 30 },
+                    { currency: "GBP", rate: 0.0, minBalance: null, minBalanceCurrency: "GBP", type: "Cần xác nhận KKHT", updated: "2025-04-24", sourceRef: 30 },
+                    { currency: "SGD", rate: 0.0, minBalance: null, minBalanceCurrency: "SGD", type: "Cần xác nhận KKHT", updated: "2025-04-24", sourceRef: 30 }
+                ],
+                website: "https://www.sc.com/vn/deposits/interest-rates/"
+            },
+            {
+                name: "Shinhan Việt Nam",
+                rates: [
+                    { currency: "USD", rate: 0.0, minBalance: null, minBalanceCurrency: "USD", type: "Không rõ", updated: "2025-04-24", sourceRef: 32 },
+                    { currency: "EUR", rate: 0.0, minBalance: null, minBalanceCurrency: "EUR", type: "Không rõ", updated: "2025-04-24", sourceRef: 32 },
+                    { currency: "AUD", rate: 0.0, minBalance: null, minBalanceCurrency: "AUD", type: "Không rõ", updated: "2025-04-24", sourceRef: 32 },
+                    { currency: "GBP", rate: 0.0, minBalance: null, minBalanceCurrency: "GBP", type: "Không rõ", updated: "2025-04-24", sourceRef: 32 },
+                    { currency: "JPY", rate: 0.0, minBalance: null, minBalanceCurrency: "JPY", type: "Không rõ", updated: "2025-04-24", sourceRef: 32 },
+                    { currency: "SGD", rate: 0.0, minBalance: null, minBalanceCurrency: "SGD", type: "Không rõ", updated: "2025-04-24", sourceRef: 32 }
+                ],
+                website: "https://shinhan.com.vn/vi/interest-rate"
+            },
+             {
+                name: "Public Bank VN",
+                rates: [
+                     { currency: "USD", rate: 0.0, minBalance: null, minBalanceCurrency: "USD", type: "Không rõ", updated: "2025-04-24", sourceRef: 58 },
+                    { currency: "EUR", rate: 0.1, minBalance: null, minBalanceCurrency: "EUR", type: "Không rõ", updated: "2025-04-24", sourceRef: 58 },
+                    { currency: "SGD", rate: 0.1, minBalance: null, minBalanceCurrency: "SGD", type: "Không rõ", updated: "2025-04-24", sourceRef: 58 }
+                ],
+                website: "https://publicbank.com.vn/ToolsUtilities/InterestRate"
+            },
+             {
+                name: "SHB",
+                rates: [
+                    { currency: "USD", rate: 0.0, minBalance: null, minBalanceCurrency: "USD", type: "Không rõ", updated: "2025-04-24", sourceRef: 28 },
+                    { currency: "EUR", rate: 0.0, minBalance: null, minBalanceCurrency: "EUR", type: "Không rõ", updated: "2025-04-24", sourceRef: 28 }
+                ],
+                website: "https://www.shb.com.vn/lai-suat/"
+            },
+             {
+                name: "MBBank",
+                rates: [
+                     { currency: "USD", rate: 0.0, minBalance: null, minBalanceCurrency: "USD", type: "Không rõ", updated: "2025-04-24", sourceRef: 66 },
+                    { currency: "EUR", rate: 0.0, minBalance: null, minBalanceCurrency: "EUR", type: "Không rõ", updated: "2025-04-24", sourceRef: 66 }
+                ],
+                 website: "https://www.mbbank.com.vn/Fee"
+            },
+        ];
+
+        // --- Các loại ngoại tệ được hỗ trợ ---
+        const supportedCurrencies = [...new Set(bankData.flatMap(bank => bank.rates.map(rateInfo => rateInfo.currency)))].sort();
+
+        // --- Lấy các phần tử DOM ---
+        const currencySelect = document.getElementById('currency');
+        const amountInput = document.getElementById('amount');
+        const findButton = document.getElementById('findButton');
+        const resultsDiv = document.getElementById('results');
+
+        // --- Hàm định dạng số khi nhập liệu ---
+        function formatNumberInput(inputElement) {
+            let value = inputElement.value;
+            // 1. Loại bỏ tất cả ký tự không phải số
+            let numberString = value.replace(/[^0-9]/g, '');
+            // 2. Chuyển đổi thành số (nếu có) để loại bỏ số 0 ở đầu (ví dụ: 00500 -> 500)
+            let number = parseInt(numberString, 10);
+             // Nếu không phải là số hợp lệ (ví dụ: chuỗi rỗng sau khi loại bỏ ký tự) hoặc là 0
+            if (isNaN(number) || number === 0) {
+                 inputElement.value = ''; // Đặt lại thành rỗng nếu không hợp lệ hoặc là 0
+                 return ''; // Trả về chuỗi rỗng để biểu thị giá trị số là 0 hoặc không hợp lệ
+            }
+            // 3. Định dạng lại với dấu phẩy
+            let formattedString = number.toLocaleString('en-US'); // Sử dụng 'en-US' cho dấu phẩy
+            // 4. Cập nhật giá trị input
+            inputElement.value = formattedString;
+            return numberString; // Trả về chuỗi số chưa định dạng để tính toán
+        }
+
+         // --- Hàm lấy giá trị số thực từ input đã định dạng ---
+        function getNumericValue(inputElement) {
+            let formattedValue = inputElement.value;
+            // Loại bỏ dấu phẩy ngăn cách hàng nghìn
+            let numberString = formattedValue.replace(/,/g, '');
+            // Chuyển đổi thành số float
+            return parseFloat(numberString) || 0;
+        }
+
+
+        // --- Hàm khởi tạo ---
+        function initializeApp() {
+            supportedCurrencies.forEach(currency => {
+                const option = document.createElement('option');
+                option.value = currency;
+                option.textContent = currency;
+                currencySelect.appendChild(option);
+            });
+            findButton.addEventListener('click', findBestBank);
+
+            // Thêm sự kiện 'input' để định dạng khi người dùng nhập
+            amountInput.addEventListener('input', () => {
+                formatNumberInput(amountInput);
+            });
+
+             // Thêm sự kiện 'blur' để định dạng lại lần cuối khi người dùng rời khỏi ô input
+             amountInput.addEventListener('blur', () => {
+                formatNumberInput(amountInput); // Đảm bảo định dạng đúng ngay cả khi dán giá trị
+             });
+        }
+
+        // --- Hàm tính lãi dự thu ---
+        function calculateInterest(amount, rate) {
+            if (amount <= 0 || rate < 0) {
+                return { monthly: 0, annual: 0 };
+            }
+            const annualRateDecimal = rate / 100;
+            const annualInterest = amount * annualRateDecimal;
+            const monthlyInterest = (annualInterest / 365) * 30;
+            return { monthly: monthlyInterest, annual: annualInterest };
+        }
+
+        // --- Hàm định dạng số tiền (cho kết quả) ---
+        function formatCurrency(value, currencyCode) {
+            try {
+                return new Intl.NumberFormat('en-US', {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                }).format(value);
+            } catch (e) {
+                return value.toFixed(2);
+            }
+        }
+
+        // --- Hàm tìm ngân hàng tốt nhất ---
+        function findBestBank() {
+            const selectedCurrency = currencySelect.value;
+            // Lấy giá trị số từ input đã được định dạng
+            const enteredAmount = getNumericValue(amountInput);
+
+            let filteredBanks = bankData
+                .map(bank => {
+                    const rateInfo = bank.rates.find(r => r.currency === selectedCurrency);
+                    if (rateInfo) {
+                        let minBalanceDisplay = "Không yêu cầu/Không rõ";
+                        if (rateInfo.minBalance !== null && rateInfo.minBalance !== undefined) {
+                           if (rateInfo.minBalanceCurrency === 'VND') {
+                                minBalanceDisplay = `${rateInfo.minBalance.toLocaleString('vi-VN')} ${rateInfo.minBalanceCurrency} (${rateInfo.type || ''})`;
+                           } else {
+                                minBalanceDisplay = `${rateInfo.minBalance.toLocaleString('en-US')} ${rateInfo.minBalanceCurrency} (${rateInfo.type || ''})`;
+                           }
+                        } else if (rateInfo.type && rateInfo.type.toLowerCase().includes('cần xác nhận')) {
+                            minBalanceDisplay = "Cần xác nhận";
+                        }
+
+                        const estimatedInterest = calculateInterest(enteredAmount, rateInfo.rate);
+
+                        return {
+                            name: bank.name,
+                            rate: rateInfo.rate,
+                            minBalance: rateInfo.minBalance,
+                            minBalanceCurrency: rateInfo.minBalanceCurrency,
+                            minBalanceDisplay: minBalanceDisplay.replace('()','').trim(),
+                            website: bank.website,
+                            updated: rateInfo.updated || 'Không rõ',
+                            monthlyInterest: estimatedInterest.monthly,
+                            annualInterest: estimatedInterest.annual
+                        };
+                    }
+                    return null;
+                })
+                .filter(bank => bank !== null);
+
+             if (enteredAmount > 0) {
+                filteredBanks = filteredBanks.filter(bank => {
+                    if (bank.minBalance !== null && bank.minBalance !== undefined && bank.minBalanceCurrency === selectedCurrency) {
+                        return enteredAmount >= bank.minBalance;
+                    }
+                    return true;
+                });
+            }
+
+            filteredBanks.sort((a, b) => b.rate - a.rate);
+            displayResults(filteredBanks, selectedCurrency, enteredAmount > 0);
+        }
+
+        // --- Hàm hiển thị kết quả ---
+        function displayResults(banks, currency, hasEnteredAmount) {
+            resultsDiv.innerHTML = '';
+
+            if (banks.length === 0) {
+                resultsDiv.innerHTML = `<p class="text-center text-gray-600 mt-4">Không tìm thấy ngân hàng nào phù hợp với tiêu chí tìm kiếm cho ${currency} hoặc không có dữ liệu.</p>`;
+                return;
+            }
+
+            let infoMessage = '';
+            if (currency === 'USD') {
+                 infoMessage = `<p class="text-center text-orange-600 font-semibold bg-orange-100 p-3 rounded-md mt-4 mb-4">Lãi suất tiền gửi USD không kỳ hạn được quy định là <strong>0%/năm</strong> tại tất cả các ngân hàng theo quy định của NHNN.</p>`;
+            } else if (currency === 'JPY' && banks.every(b => b.rate === 0)) {
+                 infoMessage = `<p class="text-center text-blue-600 font-semibold bg-blue-100 p-3 rounded-md mt-4 mb-4">Lãi suất tiền gửi JPY không kỳ hạn hiện tại là <strong>0%/năm</strong> tại các ngân hàng được khảo sát.</p>`;
+            }
+            resultsDiv.innerHTML = infoMessage;
+
+            const tableContainer = document.createElement('div');
+            tableContainer.className = 'table-container mt-4';
+
+            const table = document.createElement('table');
+            table.className = 'min-w-full divide-y divide-gray-200 border border-gray-200 rounded-lg shadow-sm';
+            table.innerHTML = `
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ngân hàng</th>
+                        <th scope="col" class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Lãi suất (%/năm)</th>
+                        <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Số dư tối thiểu</th>
+                        <th scope="col" class="px-4 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Lãi dự thu (Tháng)</th>
+                        <th scope="col" class="px-4 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Lãi dự thu (Năm)</th>
+                        <th scope="col" class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Cập nhật</th>
+                        <th scope="col" class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Website (Tham khảo)</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    </tbody>
+            `;
+
+            const tbody = table.querySelector('tbody');
+            banks.forEach(bank => {
+                const row = document.createElement('tr');
+                const monthlyInterestDisplay = hasEnteredAmount ? formatCurrency(bank.monthlyInterest, currency) + `<span class="currency-symbol">${currency}</span>` : '-';
+                const annualInterestDisplay = hasEnteredAmount ? formatCurrency(bank.annualInterest, currency) + `<span class="currency-symbol">${currency}</span>` : '-';
+
+                row.innerHTML = `
+                    <td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-900">${bank.name}</td>
+                    <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-700 text-center font-semibold">${bank.rate.toFixed(2)}%</td>
+                    <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600">${bank.minBalanceDisplay}</td>
+                    <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600 number-cell">${monthlyInterestDisplay}</td>
+                    <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-600 number-cell">${annualInterestDisplay}</td>
+                    <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-500 text-center">${bank.updated}</td>
+                    <td class="px-4 py-3 whitespace-nowrap text-sm text-center">
+                        ${bank.website ? `<a href="${bank.website}" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-900 underline">Xem</a>` : 'Không có'}
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+
+            tableContainer.appendChild(table);
+            resultsDiv.appendChild(tableContainer);
+        }
+
+        // --- Khởi chạy ứng dụng ---
+        initializeApp();
+
+    </script>
+
+</body>
+</html>
